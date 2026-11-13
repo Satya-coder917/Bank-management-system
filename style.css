@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #ee0505;
+  color: #0152ff;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 230px;
+  background: #17233c;
+  color: rgb(219, 9, 9);
+  padding: 25px;
+}
+
+.sidebar h2 {
+  margin-bottom: 8px;
+}
+
+.sidebar p {
+  color: #0855e4;
+  margin-bottom: 40px;
+}
+
+.sidebar nav button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  background: transparent;
+  color: rgb(235, 9, 9);
+  border: none;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sidebar nav button:hover {
+  background: #064de4;
+}
+
+.main {
+  flex: 1;
+  padding: 30px;
+  min-width: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e10707;
+}
+
+.page {
+  padding-top: 25px;
+}
+
+.hidden {
+  display: none;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 25px 0;
+}
+
+.card, .panel {
+  background: rgb(212, 4, 4);
+  padding: 22px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 15px #0000000a;
+}
+
+.card h2 {
+  margin-top: 15px;
+  color: #6558d3;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+}
+
+input, select {
+  padding: 12px;
+  border: 1px solid #e51010;
+  border-radius: 7px;
+  width: 100%;
+  margin: 8px 0;
+}
+
+form button, .page > button {
+  padding: 12px;
+  border: none;
+  border-radius: 7px;
+  background: #6558d3;
+  color: rgb(219, 11, 11);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgb(242, 8, 8);
+  margin-top: 18px;
+}
+
+th, td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #ef0909;
+}
+
+th {
+  background: #1b07f5;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #e80b0b;
+}
+
+@media(max-width: 700px) {
+  .sidebar {
+    width: 150px;
+    padding: 12px;
+  }
+
+  .main {
+    padding: 15px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+body {
+    background-color: red !important;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BankEase - Bank Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h2>🏦 BankEase</h2>
+      <p>Management System</p>
+      <nav>
+        <button onclick="showPage('dashboard')">Dashboard</button>
+        <button onclick="showPage('accounts')">Accounts</button>
+        <button onclick="showPage('transactions')">Transactions</button>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header>
+        <h1 id="pageTitle">Dashboard</h1>
+        <span>System Admin</span>
+      </header>
+
+      <section id="dashboard" class="page">
+        <h2>Welcome, Admin 👋</h2>
+
+        <div class="cards">
+          <div class="card">
+            <p>Total Balance</p>
+            <h2 id="totalBalance">₹0</h2>
+          </div>
+          <div class="card">
+            <p>Total Accounts</p>
+            <h2 id="accountCount">0</h2>
+          </div>
+          <div class="card">
+            <p>Transactions</p>
+            <h2 id="transactionCount">0</h2>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Quick Banking</h3>
+          <form id="transactionForm">
+            <label>Account</label>
+            <select id="accountSelect"></select>
+
+            <label>Transaction Type</label>
+            <select id="transactionType">
+              <option value="deposit">Deposit</option>
+              <option value="withdraw">Withdraw</option>
+            </select>
+
+            <label>Amount (₹)</label>
+            <input id="amount" type="number" min="1" required>
+
+            <button type="submit">Confirm Transaction</button>
+          </form>
+          <p id="formMessage"></p>
+        </div>
+
+        <div class="panel">
+          <h3>Recent Transactions</h3>
+          <div id="recentTransactions"></div>
+        </div>
+      </section>
+
+      <section id="accounts" class="page hidden">
+        <h2>Customer Accounts</h2>
+        <button onclick="addAccount()">+ Add Account</button>
+        <input id="accountSearch" placeholder="Search account..."
+          oninput="renderAccounts()">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Account Number</th>
+              <th>Type</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody id="accountsTable"></tbody>
+        </table>
+      </section>
+
+      <section id="transactions" class="page hidden">
+        <h2>Transaction History</h2>
+        <input id="transactionSearch"
+          placeholder="Search transactions..."
+          oninput="renderTransactions()">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Customer</th>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="transactionsTable"></tbody>
+        </table>
+      </section>
+
+      <footer>BankEase Demo | Educational Project</footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
